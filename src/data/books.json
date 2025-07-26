@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "cover": "/images/atomic-habits.jpg",
+    "progress": 70
+  },
+  {
+    "id": 2,
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "cover": "/images/deep-work.jpg",
+    "progress": 45
+  }
+]

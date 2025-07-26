@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Read 20 pages a day",
+    "streak": 5,
+    "target": 30
+  },
+  {
+    "id": 2,
+    "title": "Finish 2 books this month",
+    "streak": 1,
+    "target": 2
+  }
+]
