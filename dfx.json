@@ -4,6 +4,10 @@
       "candid": "src/bookmate_backend/bookmate_backend.did",
       "package": "bookmate_backend",
       "type": "rust"
+    },
+    "bookmate_frontend": {
+      "type": "assets",
+      "source": ["src/bookmate_frontend/index.html"]
     }
   },
   "defaults": {
