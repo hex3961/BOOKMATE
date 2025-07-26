@@ -1,0 +1,17 @@
+{
+  "canisters": {
+    "bookmate_backend": {
+      "candid": "src/bookmate_backend/bookmate_backend.did",
+      "package": "bookmate_backend",
+      "type": "rust"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

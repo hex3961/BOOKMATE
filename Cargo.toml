@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/bookmate_backend"
+]
+resolver = "2"
