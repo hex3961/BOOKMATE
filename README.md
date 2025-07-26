@@ -69,11 +69,11 @@ Coming soon: Add screenshots of your deployed MVP or Figma design here.
 👨‍💻 Team BitByBit
 Built by a team of freshers just getting started with hackathons, but ready to build meaningful things — one bit at a time.
 
-Your Name 1
+Sushant Kumar
 
-Your Name 2
+Abhilash Pawar
 
-Your Name 3
+Sarthak Singh
 
 💬 Final Thought
 BookMate is more than a project. It’s a mindset:
