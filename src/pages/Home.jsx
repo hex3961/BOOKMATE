@@ -1,14 +1,11 @@
-// Home.jsx - Updated Home Screen with Animations, Real Data, and Routing
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BookOpen, Flame, TrendingUp } from 'lucide-react';
+import { Flame, TrendingUp } from 'lucide-react';
 import booksData from '../data/books.json';
 import goalsData from '../data/goals.json';
 import quotesData from '../data/quotes.json';
 import "../index.css";
-
 
 const tabs = ['Main Menu', 'Goals Progress', 'Currently Reading'];
 
@@ -24,41 +21,45 @@ const Home = () => {
     }
   }, []);
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
-
-  const pulseAnimation = {
-    animate: {
-      scale: [1, 1.2, 1],
-      transition: { repeat: Infinity, duration: 1.5, ease: 'easeInOut' },
-    },
-  };
-
   return (
-    <div className="home-container">
-      <div className="header">
-        <div className="toggle-tabs">
-          {tabs.map((tab) => (
-            <motion.button
-              key={tab}
-              onClick={() => handleTabChange(tab)}
-              className={`tab-button ${activeTab === tab ? 'active' : ''}`}
-              layout
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            >
-              {tab}
-            </motion.button>
-          ))}
+    <div className="home-container px-6 py-4">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
+        {/* Toggle Tabs */}
+        <div className="w-full md:w-auto flex justify-center">
+          <div className="relative bg-[#EDE8DB] rounded-full flex p-1 gap-1 shadow-inner">
+            {tabs.map((tab) => {
+              const isActive = tab === activeTab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`relative z-10 px-4 py-1.5 text-sm rounded-full transition-colors duration-300 ${
+                    isActive ? 'text-black font-semibold' : 'text-gray-500'
+                  }`}
+                >
+                  {tab}
+                  {isActive && (
+                    <motion.div
+                      layoutId="active-pill"
+                      className="absolute inset-0 bg-white rounded-full shadow z-[-1]"
+                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="reading-streak flex items-center gap-1 bg-white rounded-full px-3 py-1 shadow text-sm font-semibold text-red-500">
+        {/* Streak Display */}
+        <div className="reading-streak flex items-center gap-1 bg-white rounded-full px-3 py-1 shadow text-sm font-semibold text-red-500 justify-center md:justify-end">
           <Flame size={18} />
           5-day streak
         </div>
-
       </div>
 
+      {/* Animated Tab Content */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
@@ -70,7 +71,7 @@ const Home = () => {
         >
           {activeTab === 'Main Menu' && (
             <div className="main-menu grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Left: Recommended Books (spans 2 cols) */}
+              {/* Recommended Books (2/3 width) */}
               <div className="md:col-span-2 bg-[#F2EFE5] rounded-xl shadow-md p-6 h-full">
                 <h2 className="text-xl font-semibold mb-4">📚 Recommended Books</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -94,7 +95,7 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Right: Quote of the Day (1 column, full height) */}
+              {/* Quote of the Day (1/3 width) */}
               <div className="bg-[#F2EFE5] rounded-xl shadow-md p-6 flex flex-col justify-between h-full">
                 <div>
                   <h2 className="text-xl font-semibold mb-4">📖 Quote of the Day</h2>
@@ -107,29 +108,36 @@ const Home = () => {
             </div>
           )}
 
-
           {activeTab === 'Goals Progress' && (
-            <div className="goals-section">
-              <h2>Reading Goals</h2>
-              <ul className="goals-list">
+            <div className="goals-section bg-white p-4 rounded-lg shadow">
+              <h2 className="text-xl font-bold mb-4">🎯 Reading Goals</h2>
+              <ul className="space-y-3">
                 {goalsData && goalsData.map((goal) => (
-                  <GoalCard goal={goal}>
-                    <TrendingUp /> {goal.title} – {goal.progress}%
-                  </GoalCard>
+                  <li
+                    key={goal.title}
+                    className="flex items-center gap-3 bg-[#F5F5EF] p-3 rounded shadow-sm"
+                  >
+                    <TrendingUp size={18} className="text-green-600" />
+                    <span>{goal.title} – {goal.progress}%</span>
+                  </li>
                 ))}
               </ul>
             </div>
           )}
 
           {activeTab === 'Currently Reading' && (
-            <div className="current-section">
-              <h2>Currently Reading</h2>
-              <div className="book-grid">
+            <div className="current-section bg-white p-4 rounded-lg shadow">
+              <h2 className="text-xl font-bold mb-4">📘 Currently Reading</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {booksData && booksData.filter((b) => b.status === 'reading').map((book) => (
-                  <div key={book.id} className="book-card">
-                    <img src={book.cover} alt={book.title} />
-                    <h3>{book.title}</h3>
-                    <p>{book.progress}% done</p>
+                  <div key={book.id} className="text-center">
+                    <img
+                      src={book.cover}
+                      alt={book.title}
+                      className="h-40 w-full object-cover rounded-lg shadow"
+                    />
+                    <h3 className="mt-2 text-sm font-semibold">{book.title}</h3>
+                    <p className="text-xs text-gray-500">{book.progress}% done</p>
                   </div>
                 ))}
               </div>
