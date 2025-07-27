@@ -84,16 +84,24 @@ const Home = () => {
                 <div className="book-grid">
                   {booksData && booksData.slice(0, 6).map((book) => (
                     <div
-                      BookCard key={book.id}
-                      book="book"
+                      key={book.id}
                       onClick={() => navigate(`/book/${book.id}`)}
+                      className="cursor-pointer bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
                     >
-                      <img src={book.cover} alt={book.title} />
-                      <h3>{book.title}</h3>
+                      <img
+                        src={book.cover}
+                        alt={book.title}
+                        className="w-full aspect-[2/3] object-cover"
+                      />
+                      <div className="p-2">
+                        <h3 className="text-md font-semibold truncate">{book.title}</h3>
+                        <p className="text-sm text-gray-600">{book.author}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
+
             </div>
           )}
 
