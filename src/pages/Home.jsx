@@ -72,21 +72,16 @@ const Home = () => {
           className="tab-content"
         >
           {activeTab === 'Main Menu' && (
-            <div className="main-menu">
-              <div className="section">
-                <h2>Quote of the Day</h2>
-                <blockquote>{quote.text || 'Keep reading and stay curious.'}</blockquote>
-                <p className="quote-author">{quote.author || 'Unknown'}</p>
-              </div>
-
-              <div className="section">
-                <h2>Recommended Books</h2>
-                <div className="book-grid">
+            <div className="main-menu grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Left: Recommended Books (spans 2 cols) */}
+              <div className="md:col-span-2 bg-[#F2EFE5] rounded-xl shadow-md p-6 h-full">
+                <h2 className="text-xl font-semibold mb-4">📚 Recommended Books</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {booksData && booksData.slice(0, 6).map((book) => (
                     <div
                       key={book.id}
                       onClick={() => navigate(`/book/${book.id}`)}
-                      className="cursor-pointer bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105"
+                      className="cursor-pointer bg-white rounded-lg shadow overflow-hidden hover:scale-105 transition-transform"
                     >
                       <img
                         src={book.cover}
@@ -94,16 +89,27 @@ const Home = () => {
                         className="w-full aspect-[2/3] object-cover"
                       />
                       <div className="p-2">
-                        <h3 className="text-md font-semibold truncate">{book.title}</h3>
-                        <p className="text-sm text-gray-600">{book.author}</p>
+                        <h3 className="text-sm font-semibold truncate">{book.title}</h3>
+                        <p className="text-xs text-gray-500 truncate">{book.author}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
+              {/* Right: Quote of the Day (1 column, full height) */}
+              <div className="bg-[#F2EFE5] rounded-xl shadow-md p-6 flex flex-col justify-between h-full">
+                <div>
+                  <h2 className="text-xl font-semibold mb-4">📖 Quote of the Day</h2>
+                  <blockquote className="italic text-lg text-gray-700 mb-2">
+                    “{quote.text || 'Keep reading and stay curious.'}”
+                  </blockquote>
+                  <p className="text-right text-sm text-gray-600">— {quote.author || 'Unknown'}</p>
+                </div>
+              </div>
             </div>
           )}
+
 
           {activeTab === 'Goals Progress' && (
             <div className="goals-section">
