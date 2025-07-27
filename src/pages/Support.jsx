@@ -26,7 +26,7 @@ const Support = () => {
         >
           <p className="text-md font-itim">📧 Email us at:</p>
           <a
-            href="mailto:support@bookmate.app"
+            href="mailto:bookmate.team.reach@gmail.com"
             className="block text-blue-600 underline mt-2 break-all text-lg font-semibold"
           >
             support@bookmate.app
