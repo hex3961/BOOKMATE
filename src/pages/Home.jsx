@@ -23,7 +23,6 @@ const Home = () => {
 
   return (
     <div className="home-container px-6 py-4">
-      {/* Header Section */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 gap-4">
         {/* Toggle Tabs */}
         <div className="w-full md:w-auto flex justify-center">
