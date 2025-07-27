@@ -9,7 +9,7 @@ In an age of passive learning, BookMate asks:
 
 What if reading was just the beginning?
 
-We believe that experience > theory — and BookMate helps users turn ideas into action by combining reading, reflection, and real-world challenges.
+We believe that experience > popularity — and BookMate helps users turn ideas into action by combining reading, reflection, and real-world challenges.
 
 🎯 Our Goal
 As freshers entering our first hackathon, we wanted to build something that reflects our own journey:
@@ -18,7 +18,6 @@ Pushing past our comfort zone, exploring the unknown, and learning by doing.
 BookMate is designed to help others do the same—bit by bit.
 
 💡 Key Features
-📖 Reading-Driven Challenges – Every book recommendation comes with curated real-world tasks
 
 🎯 Personal Growth Tracker – See how far you’ve gone outside your comfort zone
 
@@ -31,22 +30,22 @@ BookMate is designed to help others do the same—bit by bit.
 ⚙️ Tech Stack
 Frontend – React.js + TailwindCSS
 
-Backend – Firebase (Auth, Firestore)
+Backend – Rust (Only for now)
 
 Design – Figma
 
 Deployment – Vercel
 
-🚀 Built During the Hackathon
-During the hackathon, we:
+🚀 During the Hackathon
+During the hackathon, we are going to :
 
-Developed a working MVP with book-based task journeys
+Develop a working MVP with book-based task journeys
 
-Implemented user authentication and growth tracking
+Implement user authentication and growth tracking
 
-Designed a clean, intuitive UI for easy onboarding
+Design a clean, intuitive UI for easy onboarding
 
-Deployed live version with demo users for testing
+Deploy live version with demo users for testing
 
 🔮 What's Next
 If BookMate shows promise, here’s how we’ll grow it:
@@ -64,19 +63,24 @@ Partner with educators and community leaders
 Open-source the challenge engine to allow community-contributed books and tasks
 
 📸 Screenshots
-Coming soon: Add screenshots of your deployed MVP or Figma design here.
+
+<img width="1920" height="970" alt="image" src="https://github.com/user-attachments/assets/e784dee9-c805-46c1-bb5d-de7e53014a02" />
+
 
 👨‍💻 Team BitByBit
 Built by a team of freshers just getting started with hackathons, but ready to build meaningful things — one bit at a time.
 
 Sushant Kumar
+(Frontend Development)
 
 Abhilash Pawar
+(Backend Development)
 
 Sarthak Singh
+(Backend Development)
 
 💬 Final Thought
-BookMate is more than a project. It’s a mindset:
+BookMate is more than a project. It’s an experience:
 
 “Read. Reflect. Act. Grow.”
 
