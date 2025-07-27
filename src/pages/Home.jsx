@@ -52,14 +52,11 @@ const Home = () => {
           ))}
         </div>
 
-        <motion.div
-          className="reading-streak"
-          variants={pulseAnimation}
-          animate="animate"
-        >
-          <Flame color="#f66" size={24} />
-          <span className="streak-count">5</span>
-        </motion.div>
+        <div className="reading-streak flex items-center gap-1 bg-white rounded-full px-3 py-1 shadow text-sm font-semibold text-red-500">
+          <Flame size={18} />
+          5-day streak
+        </div>
+
       </div>
 
       <AnimatePresence mode="wait">
