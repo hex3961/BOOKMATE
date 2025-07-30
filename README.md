@@ -68,7 +68,7 @@ Open-source the challenge engine to allow community-contributed books and tasks
 
 
 👨‍💻 Team BitByBit
-Built by a team of freshers just getting started with hackathons, but ready to build meaningful things — one bit at a time.
+Built by a team of 1st year undergrads just getting started with hackathons, but ready to build meaningful things — one bit at a time.
 
 Sushant Kumar
 (Frontend Development)
